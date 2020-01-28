@@ -50,7 +50,6 @@ generatePost();
 
 
 
-// coder
 
 
 // const url = 'https://jsonplaceholder.typicode.com/posts/?userId=1';
