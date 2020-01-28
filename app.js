@@ -1,50 +1,66 @@
-const POST_URL = 'https://jsonplaceholder.typicode.com/posts';
+const url = 'https://jsonplaceholder.typicode.com/posts/?userId=1';
 
-// fetch(url, {
-//   methods: '',
-//   headers: ''
-// });
+const cardContainer = document.querySelector('#hotels');
 
-generatePost = () => {
-  const cardContainer = document.querySelector('.container');
-  const posts = getPosts();
-  posts.map(post => {
-    `
-      <div class="row row-cols-1 row-cols-md-2">
-          <div class="col mb-4">
-            <div class="card">
-              <img src="..." class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Post title</h5>
-                <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
-    `;
-  });
-};
-
-const getPosts = url => {
+const getPost = url => {
   const options = {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
     }
   };
-  fetch(url, options)
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      return data;
+  const post = fetch(url, options)
+    .then(res => res.json())
+    .then(data => data)
+    .catch(err => {
+      console.log(err, err.message);
+    });
+  return post;
+};
+
+const spinner = document.querySelector('.spin');
+
+const generatePost = () => {
+  cardContainer;
+  spinner.classList.add('show');
+  getPost(url)
+    .then(posts => {
+      posts.map(postArticle => {
+        cardContainer.innerHTML = `
+        <div class="col mb-4">
+          <div class="card h-100">
+            <img src="./img/macbook.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${postArticle.title}</h5>
+              <p class="card-text">${postArticle.body}</p>
+            </div>
+          </div>
+      </div>
+      `;
+        spinner.classList.remove('show');
+        return cardContainer;
+      });
     })
     .catch(err => {
-      console.log(err.message);
+      console.log(err);
     });
 };
 
-getHotelsData(POST_URL);
+generatePost();
+
+
+
+
+
+
+// const url = 'https://jsonplaceholder.typicode.com/posts/?userId=1';
+
+// fetch(url)
+//   .then(res => {
+//     return res.json();
+//   })
+//   .then(data => {
+//     const postObject = data;
+//     const postArray = Object.values(postObject);
+//     console.log(postArray);
+//   });
