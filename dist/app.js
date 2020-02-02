@@ -26,7 +26,7 @@ const generatePost = () => {
   getPost(url)
     .then(posts => {
       posts.map(postArticle => {
-        cardContainer.innerHTML = `
+        cardContainer.innerHTML += `
         <div class="col mb-4">
           <div class="card h-100">
             <img src="./img/macbook.jpg" class="card-img-top" alt="...">
