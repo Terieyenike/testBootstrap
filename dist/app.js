@@ -48,18 +48,3 @@ const generatePost = () => {
 
 generatePost();
 
-
-
-
-
-// const url = 'https://jsonplaceholder.typicode.com/posts/?userId=1';
-
-// fetch(url)
-//   .then(res => {
-//     return res.json();
-//   })
-//   .then(data => {
-//     const postObject = data;
-//     const postArray = Object.values(postObject);
-//     console.log(postArray);
-//   });
