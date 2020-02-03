@@ -11,7 +11,16 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="./img/icons/article-72_x_72.png" />
+    <link rel="apple-touch-icon" href="./img/icons/article-96_x_96.png" />
+    <link rel="apple-touch-icon" href="./img/icons/article-128_x_128.png" />
+    <link rel="apple-touch-icon" href="./img/icons/article-144_x_144.png" />
+    <link rel="apple-touch-icon" href="./img/icons/article-152_x_152.png" />
+    <link rel="apple-touch-icon" href="./img/icons/article-192_x_192.png" />
+    <link rel="apple-touch-icon" href="./img/icons/article-384_x_384.png" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./manifest.json" />
   </head>
   <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -190,14 +199,15 @@
       <div class="container hotel-rooms">
         <h2 class="text-center mb-5">Articles</h2>
         <div class="spinner">
-            <img src="./img/Spinner.svg" class="spin" alt="load articles">
-          </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3" id="hotels">
-
+          <img src="./img/Spinner.svg" class="spin" alt="load articles" />
         </div>
+        <div
+          class="row row-cols-1 row-cols-sm-2 row-cols-md-3"
+          id="hotels"
+        ></div>
       </div>
     </section>
-    
+
     <footer class="text-center bg-dark">
       <div class="container">
         <div class="row">
